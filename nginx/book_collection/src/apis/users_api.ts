@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const origin = "http://localhost:4000";
+const origin = "http://10.96.81.106:8000";
 
 export const newUserApi = async (params: {
   user: { username: string; password: string; password_confirmation: string };
