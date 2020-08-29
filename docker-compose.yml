@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+  book_nginx:
+    build:
+      context: ./api_nginx
+      dockerfile: Dockerfile
+    ports:
+      - 8000:80
+    networks:
+      - api_net
+
+  book_db:
+    image: mysql:5.7.31
+    container_name: book_db
+    restart: unless-stopped
+    networks:
+      - api_net
+    volumes:
+      - book_mysql_volume:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: book_db_docker
+
+  rails_app:
+    build:
+      context: ./api_app
+      dockerfile: Dockerfile
+    container_name: rails_app
+    networks:
+      - api_net
+    ports:
+      - 4000:4000
+    depends_on:
+      - book_db
+
+networks:
+  api_net:
+    driver: bridge
+volumes:
+  book_mysql_volume:
+    driver: local
