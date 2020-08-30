@@ -3,7 +3,7 @@ listen 8080
 timeout 30
 stderr_path File.expand_path('../../log/unicorn_stderr.log', __FILE__)
 stdout_path File.expand_path('../../log/unicorn_stdout.log', __FILE__)
-pid File.expand_path('../../tmp/pid/unicorn.pid', __FILE__)
+pid File.expand_path('../../tmp/pids/unicorn.pid', __FILE__)
 preload_app true
 before_fork do |server, worker|
     defined?(ActiveRecord::Base) and
