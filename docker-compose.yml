@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     container_name: book_nginx
     ports:
-      - 8000:80
+      - 80:80
     networks:
       - book_net
 
@@ -29,7 +29,7 @@ services:
     networks:
       - book_net
     ports:
-      - 4000:4000
+      - 8080:8080
     depends_on:
       - book_db
 

@@ -1,5 +1,5 @@
 worker_processes 2
-listen 4000
+listen 8080
 timeout 30
 stderr_path File.expand_path('../../log/unicorn_stderr.log', __FILE__)
 stdout_path File.expand_path('../../log/unicorn_stdout.log', __FILE__)

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const origin = "http://10.4.183.28:8000";
+const origin = "http://localhost:80";
 
 export const getCurrentUser = async () => {
   const response = await axios(`${origin}/api/v1/checkLogin`, {
