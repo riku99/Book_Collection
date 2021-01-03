@@ -13,7 +13,7 @@ default: &default
   reconnect: false
   pool: 5
   username: root
-  password: book_db_docker
+  password: <%= Rails.application.credentials.db_pass %>
   host: book_db
 
 development:

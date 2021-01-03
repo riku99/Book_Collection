@@ -19,7 +19,7 @@ services:
     volumes:
       - book_mysql_volume:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: book_db_docker
+      MYSQL_ROOT_PASSWORD: book_db_pass
 
   rails_app:
     build:
